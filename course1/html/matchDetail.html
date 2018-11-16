@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>彩猫体育</title>
+    <link href="../../resources/css/base.css" rel="stylesheet">
+    <link href="../../resources/css/matchDetail.css" rel="stylesheet">
+    <style type="text/css">
+        .match-info {
+            width: 100%;
+            padding: 4vw 2vw;
+            box-sizing: border-box;
+            background: url('../../resources/images/bg.jpg') center / cover no-repeat;
+        }
+
+        .match-info > div {
+            float: left;
+            text-align: center;
+        }
+
+        .match-info > div.match-info-host, .match-info > div.match-info-guest {
+            width: 35%;
+        }
+
+        .match-info > div.match-info-time {
+            width: 30%;
+        }
+
+        .team-logo-box {
+            position: relative;
+            width: 20vw;
+            height: 20vw;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 5px solid #265728;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .team-logo-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: 5px solid #bdd080;
+        }
+
+        .team-logo-box img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .match-info-time-box {
+            width: 100%;
+            height: 20vw;
+            display: table;
+        }
+
+        .match-info-time-box > p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 8vw;
+        }
+
+        .match-info-host p, .match-info-guest p {
+            color: #cfedd6;
+        }
+
+        .match-info-time {
+            color: #f4f022;
+        }
+
+        .match-tab {
+            background-color: #3a8e47;
+        }
+
+        .match-tab li {
+            float: left;
+            width: 33.33%;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 2vw 0;
+        }
+        .match-tab li.current {
+            background-color: #136404;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 比赛信息 -->
+    <div>
+        <div id="match-info" class="match-info clearfix">
+    <div class="match-info-host">
+        <div class="team-logo-box">
+            <img src="http://img1.fcaimao.com/logo/fteam/2/t_213.png">
+        </div>
+        <p>曼城(主)</p>
+    </div>
+    <div class="match-info-time">
+        <div class="match-info-time-box">
+            <p>3 : 1</p>
+        </div>
+        <p>11-12 00:30</p>
+    </div>
+    <div class="match-info-guest">
+        <div class="team-logo-box">
+            <img src="http://img1.fcaimao.com/logo/fteam/2/t_212.png">
+        </div>
+        <p>曼联(客)</p>
+    </div>
+</div>
+        <ul id="match-tab" class="match-tab clearfix">
+            <li data-type="1" class="current">实况</li>
+            <li class="" data-type="2">分析</li>
+            <li data-type="3">赔率</li>
+        </ul>
+    </div>
+    <article id="match-content">
+        <!-- 内容 -->
+    </article>
+</body></html>

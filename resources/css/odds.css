@@ -1,0 +1,78 @@
+.odds-tab {
+    width: 100%;
+}
+.odds-tab li {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 2vw 0;
+}
+.odds-tab li.current{
+    color: #D91D37;
+    border-bottom: 1px solid #D91D37;
+}
+.odds-article {
+    width: 100%;
+    overflow: hidden;
+}
+.odds-article > div {
+    width: 200%;
+}
+
+.odds-article > div > div{
+    float: left;
+    width: 50%;
+}
+
+.odds-content{
+    transition: transform 300ms linear;
+}
+.odds-content[data-index='2']{
+    transform: translate(-50%,0);
+}
+
+table.oddTable {
+    background-color: #FFFFFF;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-left: 1px solid #E4E4E4;
+}
+
+
+.europeOdds-tab, .asiaOdds-tab {
+    margin-top: 5vw;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E4E4E4;
+}
+.europeOdds-tab li, .asiaOdds-tab li {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 2vw 0;
+}
+.europeOdds-tab li.current span, .asiaOdds-tab li.current span{
+    color: #D91D37;
+    border-bottom: 1px solid #D91D37;
+}
+
+.europeOdds-article, .asiaOdds-article {
+    width: 100%;
+    overflow: hidden;
+}
+.europeOdds-article > div , .asiaOdds-article > div {
+    width: 200%;
+}
+
+.europeOdds-article > div > div , .asiaOdds-article > div > div{
+    float: left;
+    width: 50%;
+}
+
+.europeOdds-content, .asiaOdds-content{
+    transition: transform 300ms linear;
+}
+.europeOdds-content[data-index='2'], .asiaOdds-content[data-index='2']{
+    transform: translate(-50%,0);
+}

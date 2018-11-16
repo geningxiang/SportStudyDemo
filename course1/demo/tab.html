@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul.caimao-tab {
+            width: 100%;
+            height: 10vw;
+            display: flex; /*设置为flex布局*/
+            justify-content: center; /*水平居中*/
+            align-items: center; /*垂直居中*/
+            text-align: center;
+            font-size: 4vw;
+            border-bottom: 1px solid black;
+        }
+
+        .caimao-tab > li {
+            flex: 1;
+            -webkit-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            border-right: 1px solid black;
+            cursor: pointer;
+        }
+
+        .caimao-tab > li:last-child {
+            border-right: none;
+        }
+
+        .caimao-tab li.current span {
+            border-bottom: 3px solid red;
+        }
+
+        .caimao-tab-article {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .caimao-tab-article > div {
+            transition: transform 300ms linear;
+            width: 400%;
+            display: flex; /*设置为flex布局*/
+        }
+
+        .caimao-tab-article > div[data-index='2'] {
+            transform: translate(-25%, 0);
+        }
+
+        .caimao-tab-article > div[data-index='3'] {
+            transform: translate(-50%, 0);
+        }
+
+        .caimao-tab-article > div > div {
+            flex: 1;
+            -webkit-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            min-height: 50vw;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 5vw;
+            line-height: 50vw;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="tab0" class="caimao-tab clearfix" data-target="#content0">
+    <li data-index="1" class="current" style="color:#17b03b"><span>实况</span></li>
+    <li data-index="2" style="color: #F1A1A1;"><span>分析</span></li>
+    <li data-index="3" style="color: #FF9300"><span>赔率</span></li>
+</ul>
+<article id="article0" class="caimao-tab-article">
+    <div id="content0" data-index="1">
+        <div style="background-color: #17b03b">
+            <h1>我是实况</h1>
+        </div>
+        <div style="background-color: #F1A1A1">
+            <h1>我是分析</h1>
+        </div>
+        <div style="background-color: #FF9300">
+            <ul id="tab3" class="caimao-tab clearfix" data-target="#content3">
+                <li data-index="1" class="current" style="color:#5A6FB1"><span>欧赔</span></li>
+                <li data-index="2" style="color: #bdd080;"><span>亚赔</span></li>
+            </ul>
+            <article id="article3" class="caimao-tab-article">
+                <div id="content3" data-index="1">
+                    <div style="background-color: #5A6FB1">
+                        <h1>我是欧赔</h1>
+                    </div>
+                    <div style="background-color: #bdd080">
+                        <h1>我是亚赔</h1>
+                    </div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </article>
+        </div>
+        <div></div>
+    </div>
+</article>
+
+
+<script src="../../resources/lib/jquery3.3.1.min.js" type="application/javascript"></script>
+<script type="application/javascript">
+
+    $(function () {
+        //注册标签栏的点击事件
+        $(document).on('click', '.caimao-tab > li', function () {
+            var li = $(this);
+            if (!li.hasClass('current')) {
+                //修改当前标签
+                li.parent().children().removeClass('current');
+                li.addClass('current');
+
+                /*
+                修改具体内容div的 data-index
+                css中 写的是 属性选择器  .caimao-tab-article > div[data-index='2']
+                */
+                $(li.parent().attr("data-target")).attr("data-index", li.attr("data-index"));
+            }
+        });
+    });
+</script>
+</body>
+</html>

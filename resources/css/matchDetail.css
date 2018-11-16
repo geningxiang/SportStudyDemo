@@ -1,0 +1,731 @@
+body {
+    background-color: #E9E9E9;
+}
+.explain {
+    border-top: 1px solid #EBEBEB;
+    --border-bottom: 1px solid #EBEBEB;
+    padding: 0.3rem 0;
+}
+.explain > div {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.explain > div > img{
+    height: 1.4rem;
+}
+
+.eventsDiv .noEvents {
+    border-top: 1px solid #EBEBEB;
+    text-align: center;
+    padding: .5rem 0;
+}
+.eventsDiv .trDiv {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    border-top: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+}
+
+.eventsDiv .trDiv div.left,.eventsDiv .trDiv div.right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: table;
+}
+
+.eventsDiv .trDiv div.right {
+    float: right;
+    text-align: right;
+}
+.eventsDiv .trDiv .pname {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 125%;
+}
+
+.eventsDiv .trDiv img {
+    position: absolute;
+    top: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: -0.7rem;
+}
+.eventsDiv .trDiv div.left img{
+    right: 1.5rem;
+}
+.eventsDiv .trDiv div.right img{
+    left: 1.5rem;
+}
+
+.eventsDiv div.middle {
+    position: absolute;
+    width: 3rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    top: 0;
+    height: 100%;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.analysisDiv > .trDiv{
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-top: 1px solid #EBEBEB;
+}
+
+.analysisDiv > .trDiv > .left,.analysisDiv > .trDiv > .right{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    text-align: center;
+}
+.analysisDiv > .trDiv > .left {
+    padding-right: 2.5rem;
+}
+.analysisDiv > .trDiv > .right {
+    padding-left: 2.5rem;
+}
+.analysisDiv > .trDiv > .middle {
+    position: absolute;
+    width: 4rem;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    margin-left: -2rem;
+    text-align: center;
+}
+
+.lineupDiv {
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-top: 1px solid #EBEBEB;
+    text-align: center;
+}
+.lineupDiv > div{
+    float: left;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    text-align: left;
+}
+.lineupDiv > div:last-child{
+    text-align: right;
+}
+
+#match-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+    font-size: .9rem;
+    background-color: #E9E9E9;
+    color: #404040;
+}
+
+article.con .resume {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .3rem 1rem;
+    border-top: 1px solid #EBEBEB;
+}
+article.con .analysis-box {
+    width: 100%;
+}
+article.con .analysis-box > div{
+    float: left;
+    width: 33%;
+    height: 6rem;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 4.5rem;
+    line-height: 1.5rem;
+}
+article.con .analysis-box.cmAnteScaleAnalysis{
+    padding-top: 3rem;
+}
+article.con .analysis-box.cmAnteScaleAnalysis  > div{
+    height: 4rem;
+    padding-top: 2.5rem;
+}
+article.con .analysis-box .analysis-box-rate {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    width: 5rem;
+    margin-left: -2.5rem;
+    background-color: #F1A1A1;
+    border-top: 2px solid #E34646;
+    color: #E34646;
+}
+
+article.con .analysis-box .analysis-box-rate.draw {
+    background-color: #FFCA7F;
+    border-color: #FF9300;
+    color: #FF9300;
+}
+
+article.con .analysis-box .analysis-box-rate.lose {
+    background-color: #ACB7D8;
+    border-color: #5A6FB1;
+    color: #5A6FB1;
+}
+
+article.con .analysis-box .analysis-box-rate i {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 100%;
+    line-height: 150%;
+    text-align: center;
+}
+
+table.list_1 {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-collapse:collapse;border-spacing:0;
+}
+
+table.list_1 th{
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+    font-weight: normal;
+}
+table.list_1 th, table.list_1 td{
+    padding: .3rem 0;
+    text-align: center;
+    font-size: .9rem;
+    color: #404040;
+    text-align: center;
+}
+table.list_1 td img {
+    height: 1.1rem;
+}
+table.list_1 td.title img {
+    height: 1.3rem;
+    line-height: 0;
+    position: relative;
+    top: 0.2rem;
+    margin: 0 5px 0 0;
+}
+
+.recentRecordInfo {
+    width: 100%;
+    padding: 5px 0;
+    border-top: 1px solid #EBEBEB;
+}
+.recentRecordInfo > div{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+.recentRecordInfo > div:first-child {
+    border-right: 1px solid #EBEBEB;
+}
+.recentRecordInfo .canvasDiv {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 auto;
+}
+.recentRecordInfo .canvasDiv:after {
+    position: absolute;
+    left: 0;
+    bottom: .5rem;
+    width: 7rem;
+    content: '胜率';
+    text-align: center;
+    color: #919CB5;
+    font-size: 1rem;
+}
+#matchMacauslotInfo .canvasDiv:after {
+    content: '赢盘率';
+}
+.recentRecordInfo .canvasDiv p {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7rem;
+    height: 7rem;
+    color: #E23C3D;
+    text-align: center;
+    line-height: 7rem;
+    font-size: 1.4rem;
+}
+.recentRecordInfo .canvasDiv p:after {
+    content: '%';
+    font-size: .8rem;
+}
+.recentRecordInfo #guestCanvasDiv p, .recentRecordInfo #guestMacauslotCanvasDiv p {
+    color: #5A6FB1;
+}
+.recentRecordInfo canvas {
+    width: 7rem;
+    height: 7rem;
+}
+.con .title {
+    text-align: left;
+}
+.con td.title {
+    border-top: 1px solid #EBEBEB;
+    padding: 0 15px;
+}
+.con td.title .teamInfo {
+    margin-top: .3rem;
+    padding: .3rem 0;
+}
+
+.con .title.record {
+    position: relative;
+    height: 40px;
+    margin-top: 40px;
+    line-height: 40px;
+}
+.floatDiv > div {
+    float: left;
+}
+.record.floatDiv > div {
+    position: relative;
+    border-top: 1px solid #A5A5A5;
+    border-bottom: 1px solid #A5A5A5;
+}
+span.circle {position: absolute; display: block; border-radius: 14px; width: 14px; height: 14px; background-color: #ffffff; border: 2px solid #A5A5A5; top:0; margin-top: -9px;background-clip:padding-box;}
+span.circle.left {left: 0; margin-left: -7px;}
+span.circle.right {right: 0; margin-right: -7px;}
+span.circle.left.normal {left: 0; top: 1px;}
+span.circle.left.normal:after {position: absolute; content: '最近'; width: 25px; top: 10px; left:-5px; color: #999; font-size: 12px;}
+span.circle.right.normal {right: 0; top: 1px;}
+span.circle.right.normal:after {position: absolute; content: '最远'; width:25px; top: 10px; left: -5px; color: #999; font-size: 12px;}
+span.circle.win {background-color: #E34646; border: 2px solid #EEEEEE; top:-25px;}
+span.circle.win:after {content: ''; position:absolute; height:31px; width:0; border-left: 1px solid #E34646;border-right: 1px solid #E34646; top: 0; left:50%; margin-left: -1px;}
+span.circle.draw {background-color: #FF9300; border: 2px solid #EEEEEE;}
+span.circle.lose {background-color: #5A6FB1; border: 2px solid #EEEEEE; top:25px;}
+span.circle.lose:after {content: ''; position:absolute; height:31px; width:0; border-left: 1px solid #5A6FB1;border-right: 1px solid #5A6FB1; bottom: 0; left:50%; margin-left: -1px;}
+
+.win {
+    color: #E34646;
+}
+.draw {
+    color: #FF9300;
+}
+.lose {
+    color: #5A6FB1;
+}
+tr.win td.team {
+    color: #E34646;
+}
+tr.draw td.team {
+    color: #FF9300;
+}
+tr.lose td.team {
+    color: #5A6FB1;
+}
+.recommend {
+    float: left;
+    line-height: 1.5rem;
+    padding: .5rem 0;
+}
+.confidence {
+    float: right;
+    color: #FEF803;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    padding: .5rem 0;
+}
+.nearPanlv {
+    border-top: 1px solid #EBEBEB;
+    padding: .5rem 0;
+}
+.nearPanlv > div {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.nearPanlv img {
+    margin: .2rem;
+    height: 1rem;
+}
+
+.showMore {
+    background: url('../images/icon/arrow.png') no-repeat center;
+    background-size: auto .9rem;
+}
+
+.recentRecordInfo p {
+    text-align: center;
+}
+
+
+.title_tab_div {
+    /*
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    */
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    background-color: #E9E9E9;
+}
+
+.title_tab_ul {
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*z-index: 10;*/
+    width: 100%;
+    background-color: #FAFAFA;
+}
+.title_tab_ul li {
+    float: left;
+    width: 50%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-bottom: .2rem solid transparent;
+}
+
+.title_tab_ul li.current {
+    color: #D91D37;
+    border-color: #D91D37;
+}
+
+.body_layout {
+    position: relative;
+    --top: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .5rem 1rem .5rem;
+}
+.body_title {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #E4E4E4;
+    background-color: #FFFFFF;
+}
+.body_title_type {
+    width: 100%;
+    padding: .3rem 0;
+}
+.body_title_type li{
+    position: relative;
+    float: left;
+    width: 50%;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.body_title_type li:first-child:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 70%;
+    top: 15%;
+    left: 100%;
+    border-right: 1px solid #E4E4E4;
+}
+.body_title_type li span{
+    border-bottom: 2px solid transparent;
+}
+.body_title_type li.current span{
+    color: #D91D37;
+    border-bottom: 2px solid #D91D37;
+}
+
+table.oddTable {
+    background-color: #FFFFFF;
+    width: 100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    border-left: 1px solid #E4E4E4;
+}
+table.oddTable th , table.oddTable td{
+    padding: 0;
+    border-right: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    padding: .7rem .1rem;
+    text-align: center;
+    font-size: .9rem;
+}
+table.oddTable th {
+    color: #898989;
+    font-weight: normal;
+}
+table.oddTable td{
+    color: #404040;
+    word-break: break-all;
+    word-wrap:break-word;
+}
+table.oddTable .noRightBorder {
+    border-right: none;
+}
+.europeTable_data tr td:nth-child(2),.europeTable_data tr td:nth-child(3),
+.europeTable_data tr td:nth-child(5),.europeTable_data tr td:nth-child(6),.europeTable_data tr td:nth-child(7) {
+    border-right: none;
+}
+
+table.europeTable_kaili td{
+    font-size: .8rem;
+}
+
+.europeTable_kaili tr td:nth-child(2),.europeTable_kaili tr td:nth-child(3),
+.europeTable_kaili tr td:nth-child(5),.europeTable_kaili tr td:nth-child(6) {
+    border-right: none;
+}
+
+.asiaTable_data tr td:nth-child(2),.asiaTable_data tr td:nth-child(3),
+.asiaTable_data tr td:nth-child(5),.asiaTable_data tr td:nth-child(6),.asiaTable_data tr td:nth-child(7) {
+    border-right: none;
+}
+
+.chartDiv {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem .5rem 2rem 4rem;
+}
+.asiaChartDiv {
+    width: 100%;
+    box-sizing: border-box;
+    --padding: 2rem 3.5rem;
+    padding: 2rem 1rem;
+}
+.asiaChartBody {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+.asiaChartBody .ab, .asiaChartBody .bet, .asiaChartBody .be {
+    position: absolute;
+    width: 3rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: right;
+    padding-right: .5rem;
+}
+.asiaChartBody .ab {
+    right: 100%;
+    top: 0;
+}
+.asiaChartBody .bet {
+    right: 100%;
+    top: 50%;
+    margin-top: -.7rem;
+}
+.asiaChartBody .be {
+    right: 100%;
+    top: 100%;
+    margin-top: -1.4rem;
+}
+
+#asiaChartCanvas {
+    width: 100%;
+    border: 1px solid #C9C9C9;
+}
+
+.companyStatisticsDiv {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem 1rem 1rem 1rem;
+    min-height: 3rem;
+
+}
+.companyStatisticsDiv p {
+    position: relative;
+    padding-left: 1rem;
+    font-size: .9rem;
+}
+.companyStatisticsDiv p:after {
+    content: '';
+    position: absolute;
+    left: .3rem;
+    top: 50%;
+    margin-top: -.2rem;
+    width: .4rem;
+    height: .4rem;
+    border-radius: .2rem;
+    background-color: #404040;
+}
+
+.chartBody {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1px;
+}
+.grid {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #C9C9C9;
+}
+.grid li {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    box-sizing: border-box;
+    border-top: 1px solid #C9C9C9;
+}
+.grid li:first-child, .grid li:last-child{
+    border-top: none;
+}
+.grid li i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 2rem;
+    margin-left: -3.5rem;
+    margin-top: -1rem;
+    line-height: 2rem;
+    text-align: right;
+    font-size: .9rem;
+    color: #898989;
+}
+#chartCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cm_layout {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+}
+
+#asiaStatisc {
+    margin-top: 1rem;
+}
+
+.chartStatiscDiv {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+}
+
+.bestInfo {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+}
+.bestInfo li{
+    float: left;
+    width: 33%;
+}
+.bestInfo li:nth-child(2){
+    text-align: center;
+    width: 34%;
+}
+.bestInfo li:nth-child(3){
+    text-align: right;
+}
+.minTimeInfo, .maxTimeInfo {
+    float: left;
+    color: #898989;
+    line-height: 2rem;
+    font-size: .9rem;
+}
+.maxTimeInfo {
+    float: right;
+}
+.chartStatiscUl {
+    width: 20rem;
+    margin: 1rem auto;
+    border: 1px solid #D91D37;
+    border-radius: .3rem;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+.chartStatiscUl li {
+    float: left;
+    width: 34%;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    color: #D91D37;
+}
+.chartStatiscUl li:nth-child(2) {
+    width: 32%;
+    border-left: 1px solid #D91D37;
+    border-right: 1px solid #D91D37;
+}
+.chartStatiscUl li.current {
+    background-color: #D91D37;
+    color: #FFFFFF;
+}
+
+.rise {
+    color: red;
+}
+.drop {
+    color: green;
+}
+.rightArrow {
+    background: url('/images/icon/arrow-right.png') no-repeat center center;
+    background-size: .5rem auto;
+}
+
+table.oddTable td.comp_name {
+    position: relative;
+    text-align: left;
+    padding-left: 2rem;
+}
+table.oddTable td.comp_name p{
+    width: 4rem;
+    display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+table.oddTable td.comp_name button {
+    position: absolute;
+    left: .4rem;
+    top: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: -.6rem;
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px solid #C4C4C4;
+    background-color: transparent;
+    border-radius: .1rem;
+    pointer-events: none;
+}
+table.oddTable td.comp_name.current button {
+    background: #FC9102 url('/images/icon/hook.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.trend_1 {
+    color: red;
+}
+.trend_1:after {
+    content: '↑';
+}
+.trend_0:after {
+    content: '↑';
+    visibility:hidden;
+}
+.trend_-1 {
+    color: green;
+}
+.trend_-1:after {
+    content: '↓';
+}

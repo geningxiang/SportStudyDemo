@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义插件样例</title>
+    <link href="../../resources/css/base.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/picnic/6.5.0/picnic.min.css" rel="stylesheet">
+    <style>
+        body{
+            padding: 2vw;
+        }
+        article{
+            border: 1px solid black;
+            padding: 2vw;
+        }
+        h1{
+            padding: 0;
+            font-size: 4vw;
+        }
+    </style>
+</head>
+<body>
+<h1>自制的延时提示框</h1>
+<article>
+    <input type="text" id="tipContent" value="大王叫我来巡山类"/>
+    <button onclick="tips()">Tips</button>
+</article>
+<br/>
+<h1>封装数据接口-比赛列表</h1>
+<article>
+    <button onclick="queryMatchList()">queryMatchList</button>
+    <pre id="matchListPre">
+
+    </pre>
+</article>
+<br/>
+<h1>封装数据接口-比赛详情</h1>
+<article>
+    <input type="text" id="mid" value="1126900"/>
+    <button onclick="queryMatchDetail()">queryMatchDetail</button>
+    <pre id="matchDetailPre">
+
+    </pre>
+</article>
+
+<script src="../../resources/lib/jquery3.3.1.min.js" type="application/javascript"></script>
+<script src="../../resources/js/dataApi.js" type="application/javascript"></script>
+<script src="../../resources/js/core.js" type="application/javascript"></script>
+
+<script type="application/javascript">
+    function tips(){
+        Core.tips($("#tipContent").val());
+    }
+
+    function queryMatchList(){
+        CaimaoDataApi.getMatchList(function(data){
+            console.log('比赛列表', data);
+            $("#matchListPre").html(JSON.stringify(data));
+        })
+    }
+    function queryMatchDetail() {
+        var mid = $("#mid").val();
+        if(!mid) {
+            alert("请输入比赛ID");
+            return;
+        }
+        if(isNaN(mid)) {
+            alert("比赛ID格式不正确");
+            return;
+        }
+        CaimaoDataApi.getMatchDetail(mid, function(data){
+            console.log('比赛详情', data);
+            $("#matchDetailPre").html(JSON.stringify(data));
+        })
+    }
+    </script>
+</body>
+</html>
