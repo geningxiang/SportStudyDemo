@@ -1,0 +1,564 @@
+/*
+  比赛详情  包含了分析数据（历史交锋、主客队近期战绩、未来赛事）
+  接口地址： http://sports.fcaimao.com/interface.do?jsonpcallback=jQuery33107388179991485149_1542674742449&fn=1106&mid=1126913&_=1542674742450
+*/
+
+{
+  "flag": 1,
+  "errorMessage": "",
+  "match": {                                  //比赛信息 JSONObject
+    "id": 1126913,                            //比赛ID
+    "lid": 1,                                 //联赛ID
+    "sid": 0,                                 //赛季ID
+    "matchTime": "2018-11-12 03:30:00",       //比赛时间
+    "hostId": 523,                            //主队ID
+    "hostName": "AC米兰",                      //主队名称
+    "hostLogo": "http://img1.fcaimao.com/logo/fteam/5/t_523.png",     //主队图标
+    "hostGoal": 0,                            //主队进球
+    "hostRed": 1,                             //主队红牌数
+    "hs": "0.88",                             //主队水位
+    "hpm": "4",                               //主队排名
+
+    "guestId": 2,                             //客队ID
+    "guestName": "尤文图斯",                    //客队名称
+    "guestLogo": "http://img1.fcaimao.com/logo/fteam/0/t_2.png",      //客队图标
+    "guestGoal": 2,                            //客队进球数
+    "guestRed": 0,                             //客队红牌数
+    "gs": "1.05",                               //客队水位
+    "gpm": "1",                                 //客队排名
+
+
+    "matchIndex": "12",                         //轮次
+    "status": 20,                               //比赛状态
+    "statusName": "结束",                       //比赛状态中文表示
+
+    "rq": "-0.75",                              //让球数
+    "midBifen": "0-1",                          //中场比分
+
+
+    "weather": "5",                             //天气
+    "tem": "13℃～14℃",                         //温度
+    "memo": "澳门有线电视34台<br>香港NOW638台<br>beIN Sports 3 (Indovision)<br>香港有线654台<br>香港有线614台"   //比赛备注
+  },
+  "history": {                                  //历史交锋  JOSNObject
+    "spf": "0|1|5",                             //主队胜平负场数 0胜 1平 5负
+    "list": [                                   //历史交锋数据列表  JSONArray
+      {
+        "idx": 1,                                //下标
+        "matchTime": "2018-05-10 03:00:00",      //比赛时间
+        "ln": "意大利杯",                        //联赛名称
+        "hostId": 2,                            //主队ID
+        "hostName": "尤文图斯",                  //主队名称
+        "hostGoal": 4,                          //主队进球数
+        "guestId": 523,                          //客队ID
+        "guestName": "AC米兰",                    //客队名称
+        "guestGoal": 0,                         //客队进球数
+        "bet": "0.75",                          //盘口
+        "binfo": "赢",                           //盘路
+        "midBifen": "0-0"                       //中场比分
+      },
+      {
+        "bet": "1.0",
+        "hostName": "尤文图斯",
+        "ln": "意甲",
+        "guestGoal": 1,
+        "hostGoal": 3,
+        "midBifen": "1-1",
+        "binfo": "赢",
+        "hostId": 2,
+        "matchTime": "2018-04-01 02:45:00",
+        "idx": 2,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "bet": "-0.25",
+        "hostName": "AC米兰",
+        "ln": "意甲",
+        "guestGoal": 2,
+        "hostGoal": 0,
+        "midBifen": "0-1",
+        "binfo": "输",
+        "hostId": 523,
+        "matchTime": "2017-10-28 23:59:00",
+        "idx": 3,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "bet": "1.25",
+        "hostName": "尤文图斯",
+        "ln": "意甲",
+        "guestGoal": 1,
+        "hostGoal": 2,
+        "midBifen": "1-1",
+        "binfo": "输",
+        "hostId": 2,
+        "matchTime": "2017-03-11 03:45:00",
+        "idx": 4,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "bet": "1.0",
+        "hostName": "尤文图斯",
+        "ln": "意大利杯",
+        "guestGoal": 1,
+        "hostGoal": 2,
+        "midBifen": "2-0",
+        "binfo": "走",
+        "hostId": 2,
+        "matchTime": "2017-01-26 03:45:00",
+        "idx": 5,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "bet": "0.75",
+        "hostName": "尤文图斯",
+        "ln": "意超杯",
+        "guestGoal": 1,
+        "hostGoal": 1,
+        "midBifen": "1-1",
+        "binfo": "输",
+        "hostId": 2,
+        "matchTime": "2016-12-24 00:30:00",
+        "idx": 6,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      }
+    ]
+  },
+  "nearHost": {                                  //主队近期战绩       JSONObject
+    "matchs": [                                   //主队近期比赛列表  JSONArray
+      {
+        "hostName": "贝蒂斯",                    //主队名称
+        "lname": "欧罗巴",                       //联赛名称
+        "goal": "1-1",                          //比分
+        "lcolor": "7E001C",                     //联赛颜色
+        "lid": 8,                               //联赛ID
+        "midBifen": "1-0",                      //中场比分
+        "hostId": 441,                          //主队ID
+        "matchTime": "2018-11-09 04:00:00",     //比赛时间
+        "idx": 1,                               //下标
+        "guestId": 523,                         //客队ID
+        "guestName": "AC米兰"                    //客队名称
+      },
+      {
+        "hostName": "乌迪内斯",
+        "lname": "意甲",
+        "goal": "0-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-0",
+        "hostId": 51,
+        "matchTime": "2018-11-05 03:30:00",
+        "idx": 2,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "goal": "2-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "1-0",
+        "hostId": 523,
+        "matchTime": "2018-11-01 03:30:00",
+        "idx": 3,
+        "guestId": 156,
+        "guestName": "热那亚"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "goal": "3-2",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "2-2",
+        "hostId": 523,
+        "matchTime": "2018-10-29 01:00:00",
+        "idx": 4,
+        "guestId": 138,
+        "guestName": "桑普"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "欧罗巴",
+        "goal": "1-2",
+        "lcolor": "7E001C",
+        "lid": 8,
+        "midBifen": "0-1",
+        "hostId": 523,
+        "matchTime": "2018-10-26 00:55:00",
+        "idx": 5,
+        "guestId": 441,
+        "guestName": "贝蒂斯"
+      },
+      {
+        "hostName": "国际米兰",
+        "lname": "意甲",
+        "goal": "1-0",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-0",
+        "hostId": 334,
+        "matchTime": "2018-10-22 02:30:00",
+        "idx": 6,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "goal": "3-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "2-0",
+        "hostId": 523,
+        "matchTime": "2018-10-07 21:00:00",
+        "idx": 7,
+        "guestId": 161,
+        "guestName": "切沃"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "欧罗巴",
+        "goal": "3-1",
+        "lcolor": "7E001C",
+        "lid": 8,
+        "midBifen": "0-1",
+        "hostId": 523,
+        "matchTime": "2018-10-05 00:55:00",
+        "idx": 8,
+        "guestId": 654,
+        "guestName": "奥林匹亚"
+      },
+      {
+        "hostName": "萨索洛",
+        "lname": "意甲",
+        "goal": "1-4",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-1",
+        "hostId": 3706,
+        "matchTime": "2018-10-01 02:30:00",
+        "idx": 9,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "hostName": "恩波利",
+        "lname": "意甲",
+        "goal": "1-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-1",
+        "hostId": 372,
+        "matchTime": "2018-09-28 03:00:00",
+        "idx": 10,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      }
+    ],
+    "bifenInfo": "6-2-2-60.00",               //进10场情况    6胜 2平 2负  胜率60%
+    "name": "AC米兰",                         //球队名称
+    "id": 523                                //球队ID
+  },
+  "nearGuest": {                                //客队近期战绩  格式同主队近期战绩
+    "matchs": [
+      {
+        "hostName": "尤文图斯",
+        "lname": "欧冠杯",
+        "goal": "1-2",
+        "lcolor": "8D7321",
+        "lid": 12,
+        "midBifen": "0-0",
+        "hostId": 2,
+        "matchTime": "2018-11-08 04:00:00",
+        "idx": 1,
+        "guestId": 212,
+        "guestName": "曼联"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "goal": "3-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "2:1",
+        "hostId": 2,
+        "matchTime": "2018-11-04 03:30:00",
+        "idx": 2,
+        "guestId": 291,
+        "guestName": "卡利亚里"
+      },
+      {
+        "hostName": "恩波利",
+        "lname": "意甲",
+        "goal": "1-2",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "1-0",
+        "hostId": 372,
+        "matchTime": "2018-10-27 23:59:00",
+        "idx": 3,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "曼联",
+        "lname": "欧冠杯",
+        "goal": "0-1",
+        "lcolor": "8D7321",
+        "lid": 12,
+        "midBifen": "0-1",
+        "hostId": 212,
+        "matchTime": "2018-10-24 03:00:00",
+        "idx": 4,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "goal": "1-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "1-0",
+        "hostId": 2,
+        "matchTime": "2018-10-20 23:59:00",
+        "idx": 5,
+        "guestId": 156,
+        "guestName": "热那亚"
+      },
+      {
+        "hostName": "乌迪内斯",
+        "lname": "意甲",
+        "goal": "0-2",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-2",
+        "hostId": 51,
+        "matchTime": "2018-10-06 23:59:00",
+        "idx": 6,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "欧冠杯",
+        "goal": "3-0",
+        "lcolor": "8D7321",
+        "lid": 12,
+        "midBifen": "2-0",
+        "hostId": 2,
+        "matchTime": "2018-10-03 00:55:00",
+        "idx": 7,
+        "guestId": 587,
+        "guestName": "年轻人"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "goal": "3-1",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "1-1",
+        "hostId": 2,
+        "matchTime": "2018-09-29 23:59:00",
+        "idx": 8,
+        "guestId": 188,
+        "guestName": "那不勒斯"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "goal": "2-0",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "2-0",
+        "hostId": 2,
+        "matchTime": "2018-09-27 03:00:00",
+        "idx": 9,
+        "guestId": 417,
+        "guestName": "博洛尼亚"
+      },
+      {
+        "hostName": "弗洛西诺",
+        "lname": "意甲",
+        "goal": "0-2",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "midBifen": "0-0",
+        "hostId": 1411,
+        "matchTime": "2018-09-24 02:30:00",
+        "idx": 10,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      }
+    ],
+    "bifenInfo": "8-1-1-80.00",
+    "name": "尤文图斯",
+    "id": 2
+  },
+  "matchMacauslot": {             //澳门心水推荐
+    "away": "尤文图斯",
+    "awayPanlv": "WLWLDL",
+    "awayRecent": "WDWWWL",
+    "confidence": 4,
+    "home": "AC米兰",
+    "homePanlv": "LLDLWW",
+    "homeRecent": "LLWWWD",
+    "recommend": 2,
+    "text": "尤文图斯目前联赛未尝败绩，球队状态如日中天，而且他们最近6次面对AC米兰赢足5场，往绩占优的尤文图斯本轮出征有力带走3分。",
+    "war": "1:2:7",
+    "zsMid": 1220176
+  },
+  "futureHost": {                 //主队未来赛事
+    "matchs": [
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 523,
+        "matchTime": "2018-11-12 03:30:00",
+        "idx": 1,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "拉齐奥",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 271,
+        "matchTime": "2018-11-25 22:00:00",
+        "idx": 2,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "欧罗巴",
+        "lcolor": "7E001C",
+        "lid": 8,
+        "hostId": 523,
+        "matchTime": "2018-11-30 01:55:00",
+        "idx": 3,
+        "guestId": 376,
+        "guestName": "迪德朗日"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 523,
+        "matchTime": "2018-12-03 03:45:00",
+        "idx": 4,
+        "guestId": 170,
+        "guestName": "帕尔马"
+      },
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 523,
+        "matchTime": "2018-12-10 03:45:00",
+        "idx": 5,
+        "guestId": 71,
+        "guestName": "都灵"
+      },
+      {
+        "hostName": "奥林匹亚",
+        "lname": "欧罗巴",
+        "lcolor": "7E001C",
+        "lid": 8,
+        "hostId": 654,
+        "matchTime": "2018-12-14 04:00:00",
+        "idx": 6,
+        "guestId": 523,
+        "guestName": "AC米兰"
+      }
+    ],
+    "name": "AC米兰",
+    "id": 523
+  },
+  "timestamp": "2018-11-20 08:45:42",
+  "futureGuest": {                        //客队未来赛事
+    "matchs": [
+      {
+        "hostName": "AC米兰",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 523,
+        "matchTime": "2018-11-12 03:30:00",
+        "idx": 1,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 2,
+        "matchTime": "2018-11-26 03:45:00",
+        "idx": 2,
+        "guestId": 1429,
+        "guestName": "费拉拉"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "欧冠杯",
+        "lcolor": "8D7321",
+        "lid": 12,
+        "hostId": 2,
+        "matchTime": "2018-11-28 04:00:00",
+        "idx": 3,
+        "guestId": 314,
+        "guestName": "巴伦西亚"
+      },
+      {
+        "hostName": "佛罗伦萨",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 361,
+        "matchTime": "2018-12-03 03:45:00",
+        "idx": 4,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      },
+      {
+        "hostName": "尤文图斯",
+        "lname": "意甲",
+        "lcolor": "006EF0",
+        "lid": 1,
+        "hostId": 2,
+        "matchTime": "2018-12-10 03:45:00",
+        "idx": 5,
+        "guestId": 334,
+        "guestName": "国际米兰"
+      },
+      {
+        "hostName": "年轻人",
+        "lname": "欧冠杯",
+        "lcolor": "8D7321",
+        "lid": 12,
+        "hostId": 587,
+        "matchTime": "2018-12-13 04:00:00",
+        "idx": 6,
+        "guestId": 2,
+        "guestName": "尤文图斯"
+      }
+    ],
+    "name": "尤文图斯",
+    "id": 2
+  }
+}
