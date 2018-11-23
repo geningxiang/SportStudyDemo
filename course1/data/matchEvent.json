@@ -1,0 +1,122 @@
+/*
+  比赛实况  包含了比赛实况数据、赛后分析分析
+  接口地址： https://sports.fcaimao.com/interface.do?jsonpcallback=jQuery331028240514231509906_1542940988164&fn=1105&mid=1115527&_=1542940988166
+*/
+
+{
+  "flag": 1,
+  "data": {                     //赛后分析    数据格式是  主队数值,客队数值
+    "shootTarget": "6,2",       //射正数   主队射正6个,客队射正2个
+    "cornerNum": "6,4",         //角球
+    "yellowCard": "2,2",        //黄牌
+    "mid": 1115527,             //比赛ID
+    "controlTime": "69%,31%",   //控球时间比例
+    "saveNum": "1,3",           //救球
+    "id": 323949,
+    "shootNum": "19,7",         //射门数
+    "offsideNum": "2,1",        //越位
+    "foulNum": "9,9"            //犯规
+  },
+  "errorMessage": "",
+  "event": [                    //比赛实况（比赛事件）
+    {
+      "act": "0",               //0主队、1客队
+      "eventName": "换人",      //事件名称
+      "time": "80'",            //时间点
+      "event": "7",             //事件类型  1:入球	  2:点球	  3:乌龙	  4:黄牌  	5:红牌	6:两黄变红	7:换人
+      "userName": "拉姆塞|厄齐尔"   //球员名称    当时间类型是换人时   “换上的球员名称|换下的球员名称”
+    },
+    {
+      "act": "1",
+      "eventName": "换人",
+      "time": "75'",
+      "event": "7",
+      "userName": "冈崎慎司|詹姆斯·曼迪森"
+    },
+    {
+      "act": "1",
+      "eventName": "换人",
+      "time": "69'",
+      "event": "7",
+      "userName": "加扎尔|里卡多·佩雷拉"
+    },
+    {
+      "act": "0",
+      "eventName": "入球",
+      "time": "66'",
+      "event": "1",
+      "userName": "奥巴梅扬"
+    },
+    {
+      "act": "1",
+      "eventName": "黄牌",
+      "time": "65'",
+      "event": "4",
+      "userName": "里卡多·佩雷拉"
+    },
+    {
+      "act": "1",
+      "eventName": "黄牌",
+      "time": "64'",
+      "event": "4",
+      "userName": "阿尔布莱顿"
+    },
+    {
+      "act": "0",
+      "eventName": "入球",
+      "time": "63'",
+      "event": "1",
+      "userName": "奥巴梅扬"
+    },
+    {
+      "act": "1",
+      "eventName": "换人",
+      "time": "61'",
+      "event": "7",
+      "userName": "阿尔布莱顿|伊希纳乔"
+    },
+    {
+      "act": "0",
+      "eventName": "换人",
+      "time": "61'",
+      "event": "7",
+      "userName": "奥巴梅扬|利希施泰纳"
+    },
+    {
+      "act": "0",
+      "eventName": "换人",
+      "time": "61'",
+      "event": "7",
+      "userName": "贡多齐|姆希塔良"
+    },
+    {
+      "act": "0",
+      "eventName": "入球",
+      "time": "45'",
+      "event": "1",
+      "userName": "厄齐尔"
+    },
+    {
+      "act": "0",
+      "eventName": "黄牌",
+      "time": "35'",
+      "event": "4",
+      "userName": "扎卡"
+    },
+    {
+      "act": "1",
+      "eventName": "乌龙",
+      "time": "31'",
+      "event": "3",
+      "userName": "贝莱林"
+    },
+    {
+      "act": "0",
+      "eventName": "黄牌",
+      "time": "17'",
+      "event": "4",
+      "userName": "霍尔丁"
+    }
+  ],
+  "timestamp": "2018-11-23 10:36:46"
+}
