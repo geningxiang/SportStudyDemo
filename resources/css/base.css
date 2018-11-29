@@ -108,8 +108,47 @@ article.con header {
     vertical-align: middle;
 }
 
+/* 标签切换 */
+ul.caimao-tab {
+    width: 100%;
+    display: flex; /*设置为flex布局*/
+    justify-content: center; /*水平居中*/
+    align-items: center; /*垂直居中*/
+}
 
+.caimao-tab > li {
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    cursor: pointer;
+}
+.caimao-tab-article {
+    width: 100%;
+    overflow: hidden;
+}
 
+.caimao-tab-article > div {
+    transition: transform 300ms linear;
+    width: 400%;
+    display: flex; /*设置为flex布局*/
+}
+
+.caimao-tab-article > div[data-index='2'] {
+    transform: translate(-25%, 0);
+}
+
+.caimao-tab-article > div[data-index='3'] {
+    transform: translate(-50%, 0);
+}
+
+.caimao-tab-article > div > div {
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    min-height: 50vw;
+}
 
 /* 下面是自制的延时提示框 */
 .tipsAni {
