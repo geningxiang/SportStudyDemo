@@ -1,0 +1,7 @@
+
+请同学们完成 比赛详情头部及比赛实况的内容
+
+
+静态页面:   /course1/html/matchDetail.html
+接口说明:   /course1/data/matchDetail.json
+           /course1/data/matchEvent.json

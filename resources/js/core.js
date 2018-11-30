@@ -42,6 +42,10 @@
                 return s;
             }
         },
+        /**
+         * 延时关闭的提示框
+         * @param content
+         */
         tips: function (content) {
             $(".tipsAni").remove();
 

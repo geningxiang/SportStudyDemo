@@ -234,7 +234,7 @@ article.con .analysis-box > div{
     position: relative;
     box-sizing: border-box;
     text-align: center;
-    padding-top: 4.5rem;
+    padding-top: 3.5rem;
     line-height: 1.5rem;
 }
 article.con .analysis-box.cmAnteScaleAnalysis{
@@ -378,8 +378,16 @@ table.list_1 td.title img {
     margin-top: 40px;
     line-height: 40px;
 }
+.record.floatDiv {
+    display: flex; /*设置为flex布局*/
+    justify-content: center; /*水平居中*/
+    align-items: center; /*垂直居中*/
+}
 .floatDiv > div {
-    float: left;
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
 }
 .record.floatDiv > div {
     position: relative;

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>彩猫体育</title>
     <link href="../../resources/css/base.css" rel="stylesheet">
     <link href="../../resources/css/matchDetail.css" rel="stylesheet">
     <style type="text/css">
+
         .match-info {
             width: 100%;
             padding: 4vw 2vw;
@@ -91,41 +93,207 @@
             color: #FFFFFF;
             padding: 2vw 0;
         }
+
         .match-tab li.current {
             background-color: #136404;
         }
     </style>
 </head>
 <body>
-    <!-- 头部 比赛信息 -->
-    <div>
-        <div id="match-info" class="match-info clearfix">
-    <div class="match-info-host">
-        <div class="team-logo-box">
-            <img src="http://img1.fcaimao.com/logo/fteam/2/t_213.png">
+<!-- 头部 比赛信息 -->
+<div>
+    <div id="match-info" class="match-info clearfix">
+        <div class="match-info-host">
+            <div class="team-logo-box">
+                <img src="http://img1.fcaimao.com/logo/fteam/2/t_213.png">
+            </div>
+            <p>AC米兰(主)</p>
         </div>
-        <p>曼城(主)</p>
-    </div>
-    <div class="match-info-time">
-        <div class="match-info-time-box">
-            <p>3 : 1</p>
+        <div class="match-info-time">
+            <div class="match-info-time-box">
+                <p>0 : 2</p>
+            </div>
+            <p>11-12 03:30</p>
         </div>
-        <p>11-12 00:30</p>
-    </div>
-    <div class="match-info-guest">
-        <div class="team-logo-box">
-            <img src="http://img1.fcaimao.com/logo/fteam/2/t_212.png">
+        <div class="match-info-guest">
+            <div class="team-logo-box">
+                <img src="http://img1.fcaimao.com/logo/fteam/2/t_212.png">
+            </div>
+            <p>尤文图斯(客)</p>
         </div>
-        <p>曼联(客)</p>
     </div>
+    <ul id="match-tab" class="match-tab clearfix">
+        <li data-type="1" class="current">实况</li>
+        <li class="" data-type="2">分析</li>
+        <li data-type="3">赔率</li>
+    </ul>
 </div>
-        <ul id="match-tab" class="match-tab clearfix">
-            <li data-type="1" class="current">实况</li>
-            <li class="" data-type="2">分析</li>
-            <li data-type="3">赔率</li>
-        </ul>
-    </div>
-    <article id="match-content">
-        <!-- 内容 -->
+<article id="match-content">
+    <article class="con">
+        <header>赛况</header>
+        <div class="explain clearfix">
+            <div><img src="../../resources/images/football/label_goal.png" alt="进球">
+                <p>进球</p></div>
+            <div><img src="../../resources/images/football/label_penalty.png" alt="点球">
+                <p>点球</p></div>
+            <div><img src="../../resources/images/football/label_oolong.png" alt="乌龙球">
+                <p>乌龙球</p></div>
+            <div><img src="../../resources/images/football/label_-04.png" alt="红黄牌">
+                <p>红黄牌</p></div>
+            <div><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                <p>换人</p></div>
+        </div>
+
+        <div class="eventsDiv">
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_yellowc.png" alt="黄牌">
+                    <div class="pname">博里尼</div>
+                </div>
+                <div class="middle">87'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_-04.png" alt="两黄变红">
+                    <div class="pname">伊瓜因</div>
+                </div>
+                <div class="middle">83'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_yellowc.png" alt="黄牌">
+                    <div class="pname">伊瓜因</div>
+                </div>
+                <div class="middle">83'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="right"><img src="../../resources/images/football/label_goal.png" alt="进球">
+                    <div class="pname">克里斯蒂亚诺·罗纳尔多</div>
+                </div>
+                <div class="middle">81'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="right"><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                    <div class="pname">道格拉斯·科斯塔<br>迪巴拉</div>
+                </div>
+                <div class="middle">79'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                    <div class="pname">博里尼<br>阿巴特</div>
+                </div>
+                <div class="middle">74'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                    <div class="pname">拉克索尔特<br>恰尔汉奥卢</div>
+                </div>
+                <div class="middle">74'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="right"><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                    <div class="pname">赫迪拉<br>皮亚尼奇</div>
+                </div>
+                <div class="middle">74'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_changeinto.png" alt="换人">
+                    <div class="pname">库特罗内<br>卡斯蒂列霍</div>
+                </div>
+                <div class="middle">62'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="left"><img src="../../resources/images/football/label_yellowc.png" alt="黄牌">
+                    <div class="pname">巴卡约科</div>
+                </div>
+                <div class="middle">61'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="right"><img src="../../resources/images/football/label_yellowc.png" alt="黄牌">
+                    <div class="pname">贝纳蒂亚</div>
+                </div>
+                <div class="middle">34'</div>
+            </div>
+
+            <div class="trDiv">
+                <div class="right"><img src="../../resources/images/football/label_goal.png" alt="进球">
+                    <div class="pname">曼祖基奇</div>
+                </div>
+                <div class="middle">8'</div>
+            </div>
+
+
+        </div>
     </article>
-</body></html>
+    <article class="con">
+        <header>技术统计</header>
+        <div class="analysisDiv">
+            <div class="trDiv">
+                <div class="left">5</div>
+                <div class="middle">射门</div>
+                <div class="right">11</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">2</div>
+                <div class="middle">射正</div>
+                <div class="right">8</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">15</div>
+                <div class="middle">犯规</div>
+                <div class="right">8</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">4</div>
+                <div class="middle">黄牌</div>
+                <div class="right">1</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">0</div>
+                <div class="middle">越位</div>
+                <div class="right">1</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">2</div>
+                <div class="middle">角球</div>
+                <div class="right">5</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">44%</div>
+                <div class="middle">控球时间</div>
+                <div class="right">56%</div>
+            </div>
+            <div class="trDiv">
+                <div class="left">6</div>
+                <div class="middle">救球</div>
+                <div class="right">2</div>
+            </div>
+        </div>
+    </article>
+</article>
+</body>
+
+<script src="../../resources/lib/jquery3.3.1.js"></script>
+<script src="../../resources/js/dataApi.js"></script>
+<script type="application/javascript">
+
+    /*
+    改页面数据来自
+    比赛ID=1126913
+    11月12日03:30  AC米兰 VS 尤文图斯
+     */
+    $(function () {
+        CaimaoDataApi.getMatchEventAndStatistics(1126913, function (data) {
+            console.log("比赛实况及技术统计", data);
+        });
+    });
+</script>
+</html>

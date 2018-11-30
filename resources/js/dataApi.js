@@ -68,12 +68,29 @@
             doRequest({fn: 1106, mid: mid}, cb);
         },
         /**
+         * 获取单场比赛的 比赛实况及赛后技术统计
+         * @param mid
+         * @param cb
+         */
+        getMatchEventAndStatistics: function(mid, cb){
+            doRequest({fn: 1105, mid: mid}, cb);
+        },
+        /**
          * 获取比赛赔率数据
          * @param mid   比赛ID
          * @param cb
          */
         getMatchOdds: function (mid, cb) {
             doRequest({fn: 1206, mid: mid}, cb);
+        },
+        /**
+         * 获取某场比赛某个赔率公司的赔率变动明细
+         * @param mid
+         * @param compId
+         * @param cb
+         */
+        getMatchEuropeOddLogWithCompId: function(mid, compId, cb){
+            doRequest({fn: 1203, mid: mid, compId: compId}, cb);
         }
     };
 
