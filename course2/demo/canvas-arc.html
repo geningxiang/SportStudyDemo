@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas示例</title>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        .winRateBox{
+            width: 30vw;
+            height: 30vw;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+        .europeChartBox{
+            width: 80vw;
+            height: 30vw;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<article>
+    <h1>画个圆弧</h1>
+    <div id="winRateBox" class="winRateBox"></div>
+</article>
+
+
+<script src="../../resources/lib/jquery3.3.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+    let drawCircleFn = function (el, rate, bgColor, color) {
+        if(el) {
+            let canvas = document.createElement('canvas');
+
+            //设备像素比 在手机上显示会更清晰
+            let devicePixelRatio = window.devicePixelRatio || 2;
+
+            //为了提高在手机上清晰度  应为在手机上 dpi
+            canvas.width = el.clientWidth * devicePixelRatio;
+            canvas.height = el.clientHeight * devicePixelRatio;
+            el.append(canvas);
+
+            let context = canvas.getContext('2d');
+
+            //画弧度的半径
+            let radius = Math.round((Math.min(canvas.width, canvas.height) / 2) * 0.9);
+
+            //宽度
+            context.lineWidth = Math.round(radius * 0.1);
+
+            context.beginPath();
+            /*
+            画圆弧
+            context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+            x	圆的中心的 x 坐标。
+            y	圆的中心的 y 坐标。
+            r	圆的半径。
+            sAngle	起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
+            eAngle	结束角，以弧度计。
+            counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+            */
+            context.arc(canvas.width / 2, canvas.height / 2, radius, 0.75 * Math.PI, 2.25 * Math.PI, false);
+            context.strokeStyle = bgColor;
+            context.stroke();
+            context.closePath();
+
+            if (rate > 0) {
+                context.beginPath();
+                context.arc(canvas.width / 2, canvas.height / 2, radius, 0.75 * Math.PI, (0.75 + 1.5 * rate) * Math.PI, false);
+                context.strokeStyle = color;
+                context.stroke();
+                context.closePath();
+            }
+        }
+    };
+
+
+    $(function(){
+        let winRateBox = document.getElementById('winRateBox');
+        drawCircleFn(winRateBox, 0.8, "#F1A1A1", "#E34646");
+
+
+    });
+
+</script>
+</body>
+</html>

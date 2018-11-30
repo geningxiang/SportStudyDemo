@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas示例</title>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .europeChartBox {
+            width: 80vw;
+            height: 30vw;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <h1>欧赔图表</h1>
+    <div id="europeChartBox" class="europeChartBox"></div>
+</article>
+
+<script src="../../resources/lib/jquery3.3.1.js" type="text/javascript"></script>
+<script src="../../resources/js/dataApi.js" type="text/javascript"></script>
+<script src="../../resources/js/oddChart.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        //欧赔分析
+        let europeOddStatistics = {
+            "frDiffer": 2,
+            "maxTime": 1540233958,
+            "pingMin": 3.8,
+            "fuMax": 7.75,
+            "frMax": 250,
+            "srMax": 803,
+            "shengMin": 1.27,
+            "prMin": 422,
+            "fuMin": 4.5,
+            "frMin": 2,
+            "pingMax": 5.35,
+            "minTime": 1538293491,
+            "srMin": 780,
+            "shengMax": 1.65,
+            "prMax": 293,
+            "srDiffer": 2,
+            "prDiffer": 422
+        };
+
+        let sn = 'sheng';
+        let companys = [
+            {compId: europeOddStatistics.srMax, color: '#AC2924'},
+            {compId: europeOddStatistics.srMin, color: '#FC7113'},
+            {compId: europeOddStatistics.srDiffer, color: '#524A8F'},
+        ];
+
+
+        let europeChartBox = document.getElementById('europeChartBox');
+
+        new CaimaoOddEuropeChart(europeChartBox, companys, sn, europeOddStatistics.shengMin, europeOddStatistics.shengMax, europeOddStatistics.minTime, europeOddStatistics.maxTime).draw();
+    });
+</script>
+</body>
+</html>
