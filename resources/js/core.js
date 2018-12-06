@@ -30,7 +30,8 @@
                 let s = '';
                 $.ajax({
                     type : "get",
-                    url : tplUrl,
+                    //防浏览器缓存
+                    url : tplUrl + '?t=' + new Date().getTime(),
                     //同步执行
                     async : false,
                     success : function(msg){
