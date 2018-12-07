@@ -146,6 +146,9 @@
         if(diffCompId != maxCompId && diffCompId != minCompId){
             ids.push(diffCompId)
         }
+
+        //TODO 最高、最低、幅度最大 的标注
+
         console.log('准备查询下列公司赔率明细', ids);
 
 
@@ -204,7 +207,21 @@
         });
     };
 
-
+    //这里做一个缓存
+    let matchEuropeOddLogCacheMap = {};
+    let getMatchEuropeOddLogWithCompId = function(mid, compId, cb) {
+        let data = matchEuropeOddLogCacheMap[mid + '_' + compId];
+        if (data) {
+            cb && cb(data);
+        } else {
+            CaimaoDataApi.getMatchEuropeOddLogWithCompId(mid, compId, function (data) {
+                if (data.flag == 1) {
+                    matchEuropeOddLogCacheMap[mid + '_' + compId] = data;
+                }
+                cb && cb(data);
+            });
+        }
+    };
 
     /**
      * 获取赔率
@@ -220,7 +237,7 @@
             let europChartData = [];
             let finished = 0;
             for (const compId of compIds) {
-                CaimaoDataApi.getMatchEuropeOddLogWithCompId(mid, compId, function (data) {
+                getMatchEuropeOddLogWithCompId(mid, compId, function (data) {
                     console.log('赔率明细', data);
 
                     for (let i = data.data.length - 1; i >= 0; i--) {
@@ -250,7 +267,6 @@
 
                 //解析模板 渲染
                 $("#match-odds-content").html(Core.templateTpl('template/matchOdds.tpl', data));
-
 
                 //欧赔图表初始化   #europeOddCanvas
                 drawEuropeChart(mid, 'sheng', data.europeOddStatistics.srMax, data.europeOddStatistics.srMin, data.europeOddStatistics.srDiffer, europeCompanyMap);
