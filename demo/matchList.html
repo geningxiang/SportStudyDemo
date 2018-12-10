@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>足彩赛事</title>
+    <link href="../resources/css/base.css" rel="stylesheet">
+    <style type="text/css">
+    #matchListArticle{
+        padding: 10vw 0 0 0;
+    }
+    .issue {
+        background-color: #d4d4d4;
+        display: block;
+        padding: 1vw 0;
+        font-size: 3.8vw;
+        text-align: center;
+    }
+    .issue-match-list{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 2vw 2vw 2vw;
+    }
+    .match-table {
+        width: 100%;
+        border: 1px solid #d4d4d4;
+        border-spacing: 0;
+        box-sizing: border-box;
+        margin-top: 2vw;
+        text-align: center;
+        color: #4a4a4a;
+    }
+    .match-table th, .match-table td{
+        padding: 3vw 2vw;
+    }
+    .match-table th{
+        position: relative;
+        width: 25%;
+        font-weight: normal;
+        font-size: 3.5vw;
+    }
+    .match-table th:after{
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: 0;
+        width: 0;
+        height: 80%;
+        border-right: 1px solid #c5c5c5;
+    }
+    .match-table td{
+        font-size: 3.5vw;
+    }
+    .match-host-td, .match-guest-td{
+        width: 28%;
+    }
+    .team-name {
+        display: inline-block;
+        width: 15vw;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    .team-logo-box {
+        display: inline-block;
+        width: 15vw;
+        height: 10vw;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .team-logo-box img {
+        height: 10vw;
+        max-width: 15vw;
+    }
+    .match-result-tr {
+        background-color: hsla(0,0%,85%,.3);
+    }
+    .score{
+        font-size: 5vw;
+        color: #ff7611;
+    }
+    .midBifen{
+        font-size: 3vw;
+    }
+    .vs {
+        font-size: 6vw;
+        /*font-weight: bold;*/
+    }
+</style>
+
+</head>
+<body>
+    <header class="caimao-header">
+        竞彩赛事
+    </header>
+    <article id="matchListArticle">
+        <div class="issue">奖期：20181114 周三 8场比赛</div>
+        <div class="issue-match-list">
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 02:00开赛</p>
+                        <p>001</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/1/t_153.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">瑞士</p>
+                    </td>
+                    <td>
+
+                        <p class="score">0 : 1</p>
+                        <p class="midBifen">半场 0-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_940.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">卡塔尔</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>英锦赛</p>
+                        <p> 03:45开赛</p>
+                        <p>002</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/6/t_655.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">诺茨郡</p>
+                    </td>
+                    <td>
+
+                        <p class="score">4 : 2</p>
+                        <p class="midBifen">半场 3-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/5/t_568.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">唐卡斯特</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 05:30开赛</p>
+                        <p>003</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="https://img.iuliao.com/display/football/team/1236.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">达伽马</p>
+                    </td>
+                    <td>
+
+                        <p class="score">1 : 1</p>
+                        <p class="midBifen">半场 0-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1025.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">巴竞技</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:00开赛</p>
+                        <p>004</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_2457.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">巴伊亚</p>
+                    </td>
+                    <td>
+
+                        <p class="score">2 : 1</p>
+                        <p class="midBifen">半场 1-1</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_2433.gif" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">塞阿拉</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:00开赛</p>
+                        <p>005</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="https://m.api.iuliao.com//teamlogo/pic_1223.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">巴拉纳</p>
+                    </td>
+                    <td>
+
+                        <p class="score">0 : 1</p>
+                        <p class="midBifen">半场 0-1</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="https://img.iuliao.com/display/football/team/1240.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">米竞技</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:45开赛</p>
+                        <p>006</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1034.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">克鲁塞罗</p>
+                    </td>
+                    <td>
+
+                        <p class="score">1 : 0</p>
+                        <p class="midBifen">半场 1-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1029.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">科林蒂安</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:45开赛</p>
+                        <p>007</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1028.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">帕梅拉斯</p>
+                    </td>
+                    <td>
+
+                        <p class="score">3 : 0</p>
+                        <p class="midBifen">半场 1-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_1237.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">弗鲁米嫩</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:45开赛</p>
+                        <p>008</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/40/t_4099.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">累体育</p>
+                    </td>
+                    <td>
+
+                        <p class="score">0 : 0</p>
+                        <p class="midBifen">半场 0-0</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1027.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">维多利亚</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+        </div>
+
+        <div class="issue">奖期：20181115 周四 14场比赛</div>
+        <div class="issue-match-list">
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 01:00开赛</p>
+                        <p>001</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/4/t_422.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">波兰</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/2/t_296.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">捷克</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 03:00开赛</p>
+                        <p>002</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/68/t_6815.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">沙佩科</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1017.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">博塔弗戈</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 03:00开赛</p>
+                        <p>003</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1031.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">弗拉门戈</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/1/t_128.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">桑托斯</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 03:45开赛</p>
+                        <p>004</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/3/t_390.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">德国</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/3/t_374.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">俄罗斯</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 03:45开赛</p>
+                        <p>005</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/4/t_482.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">爱尔兰</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/4/t_443.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">北爱尔兰</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>欧国联</p>
+                        <p> 03:45开赛</p>
+                        <p>006</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/4/t_433.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">比利时</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/4/t_426.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">冰岛</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>欧国联</p>
+                        <p> 03:45开赛</p>
+                        <p>007</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/2/t_277.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">克罗地亚</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/0/t_48.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">西班牙</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>欧国联</p>
+                        <p> 03:45开赛</p>
+                        <p>008</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/6/t_602.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">奥地利</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="https://m.api.iuliao.com//teamlogo/pic_465.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">波黑</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>欧国联</p>
+                        <p> 03:45开赛</p>
+                        <p>009</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="https://m.api.iuliao.com//teamlogo/pic_45.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">希腊</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="https://m.api.iuliao.com//teamlogo/pic_399.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">芬兰</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>欧国联</p>
+                        <p> 03:45开赛</p>
+                        <p>010</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/0/t_24.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">匈牙利</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_550.jpg" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">爱沙尼亚</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 04:00开赛</p>
+                        <p>011</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/0/t_11.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">英格兰</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/2/t_208.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">美国</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 05:00开赛</p>
+                        <p>012</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/8/t_831.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">圣保罗</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1037.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">格雷米奥</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>巴甲</p>
+                        <p> 07:00开赛</p>
+                        <p>013</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/10/t_1024.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">巴西国际</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/sportsLogo/teamlogo/pic_2447.gif" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">米美洲</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+            <table class="match-table">
+                <tbody><tr>
+                    <th>
+                        <p>友谊赛</p>
+                        <p> 09:30开赛</p>
+                        <p>014</p>
+                    </th>
+                    <td class="match-host-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/6/t_631.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">秘鲁</p>
+                    </td>
+                    <td>
+
+                        <p class="vs">VS</p>
+                        
+                        <p></p>
+                    </td>
+                    <td class="match-guest-td">
+                        <div class="team-logo-box"><img src="http://img1.fcaimao.com/logo/fteam/3/t_373.png" onerror="this.src='resources/images/pic_none.gif'; this.onerror=null;"></div>
+                        <p class="team-name">厄瓜多尔</p>
+                    </td>
+                </tr>
+            </tbody></table>
+
+        </div>
+    </article>
+</body></html>

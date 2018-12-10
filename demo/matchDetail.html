@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>彩猫体育</title>
+    <link href="../resources/css/base.css" rel="stylesheet">
+    <link href="../resources/css/matchDetail.css" rel="stylesheet">
+    <link href="../resources/css/odds.css" rel="stylesheet">
+</head>
+<body>
+<div id="match-info" class="match-info clearfix">
+    <!-- 注入 头部 比赛信息 模板 -->
+    <div class="match-info-host">
+        <div class="team-logo-box"></div>
+        <p>(主)</p>
+    </div>
+    <div class="match-info-time">
+        <div class="match-info-time-box"><p></p></div>
+        <p></p>
+    </div>
+    <div class="match-info-guest">
+        <div class="team-logo-box"></div>
+        <p>(客)</p>
+    </div>
+</div>
+<!-- 标签 -->
+<ul id="match-tab" class="match-tab caimao-tab clearfix" data-target="#match-content">
+    <li data-index="1">实况</li>
+    <li data-index="2" class="current">分析</li>
+    <li data-index="3">赔率</li>
+</ul>
+<!-- 具体内容 -->
+<article id="match-article" class="caimao-tab-article">
+    <div id="match-content" data-index="2">
+        <div id="match-event-content">
+
+        </div>
+        <div id="match-analysis-content">
+
+        </div>
+        <div id="match-odds-content">
+
+        </div>
+        <div>
+            <!-- 纯属占位 -->
+        </div>
+    </div>
+</article>
+
+<script src="../resources/lib/jquery3.3.1.js" type="text/javascript"></script>
+<script src="../resources/lib/template-web.js" type="text/javascript"></script>
+<!-- 自己封装的通用方法 -->
+<script src="../resources/js/core.js" type="text/javascript"></script>
+<!-- 封装的获取数据接口 -->
+<script src="../resources/js/dataApi.js" type="text/javascript"></script>
+
+<!-- 蚂蚁金服的js图表插件 -->
+<script src="../resources/lib/f2.min.js"></script>
+<!-- 赔率相关 逻辑 -->
+<script src="../resources/js/odds.js"></script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        //加一个静态比赛id 方便调试
+        let mid = Core.getParam("mid") || 1115527;
+
+        //头部的比赛信息
+        $("#match-info").html(Core.templateTpl("template/matchHeader.tpl"));
+
+        //比赛实况
+        $("#match-event-content").html(Core.templateTpl("template/matchEvent.tpl"));
+
+        //赛前分析
+        $("#match-analysis-content").html(Core.templateTpl("template/matchAnalysis.tpl"));
+
+        //赔率
+        window.MatchOddsCore && MatchOddsCore.init(mid);
+    });
+</script>
+</body>
+</html>
