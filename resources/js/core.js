@@ -1,7 +1,7 @@
 
 ;(function (window, $) {
 
-    //模板缓存 暂时只用内存缓存  可以考虑用 window.localStorage
+    //TODO 模板缓存 暂时只用内存缓存  可以考虑用 window.localStorage
     let templateCache = {};
 
     let core = {
@@ -50,7 +50,7 @@
         tips: function (content) {
             $(".tipsAni").remove();
 
-            var tipsDiv = document.createElement("div");
+            let tipsDiv = document.createElement("div");
 
             tipsDiv.id = "common_tips";
             tipsDiv.innerHTML = content;
@@ -60,13 +60,40 @@
             tipsDiv.style["animation-name"] = "tipsAniControl";
 
             //动画结束后触发的事件
-            var d = function () {
+            let d = function () {
                 tipsDiv.style["-webkit-animation-name"] = "";
                 tipsDiv.style["animation-name"] = "";
                 $("#common_tips").remove();
             };
             tipsDiv.addEventListener("webkitAnimationEnd", d, false);
             tipsDiv.addEventListener("animationend", d, false);
+        },
+        /**
+         * 计算一个对象数组  某个字段的sum
+         * @param objArray
+         * @param paramName
+         */
+        sumOfObjArray: function(objArray, paramName){
+            let sum = 0;
+            if(objArray && paramName && Array.isArray(objArray)){
+                for (const item of objArray) {
+                    if(Object.prototype.toString.call(item) === '[Object Object]'){
+                        sum += item[paramName];
+                    }
+                }
+            }
+            return sum;
+        },
+        /**
+         * 计算一个对象数组  某个字段的平均值
+         * @param objArray
+         * @param paramName
+         * @returns {number}
+         */
+        avgOfObjArray: function(objArray, paramName){
+            let sum = this.sumOfObjArray(objArray, paramName);
+            let count = (objArray && objArray.length) || 0;
+            return count ? sum / count : 0;
         }
     };
 

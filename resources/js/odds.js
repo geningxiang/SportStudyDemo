@@ -1,4 +1,4 @@
-(function (window, $, CaimaoDataApi) {
+(function (window, $, CaimaoDataApi, Core) {
 
     //为赔率公司定义一串颜色数组   COLOR_ARRAY[i%COLOR_ARRAY.length]
     const COLOR_ARRAY = ['#AC2924','#21ADE7','#FC8E12','#EF2566','#1B94C5','#2F4498','#1F1B83','#E9C11E','#208149','#CCC012','#134089','#FC7113','#814B0C','#359A7D','#524A8F','#6481CF','#606060','#DB5B1B', '#386EAE','#D8443B','#E15CDD','#E96C6A','#E9C223','#00012E','#117030','#FB1900','#CCC114'];
@@ -17,49 +17,32 @@
     };
 
     /**
-     * 计算欧赔凯里指数
+     * 完善欧赔数据
      * @param europeOdds
      */
-    let calculateEuropeKaili = function(europeOdds) {
-        let europeShengRateTotal = 0, europePingRateTotal = 0, europeFuRateTotal = 0;
-        //第一次遍历
-        for (let i = 0; i < europeOdds.length; i++) {
-            let item = europeOdds[i];
-            if (!item.nowSheng)
-                item.nowSheng = item.initSheng;
-            if (!item.nowPing)
-                item.nowPing = item.initPing;
-            if (!item.nowFu)
-                item.nowFu = item.initFu;
-
+    let perfectedEurope = function(europeOdds) {
+        for (const item of europeOdds) {
+            //数据修补 如果没有 最新数据        最早的数据会有这种情况
+            item.nowSheng = item.nowSheng || item.initSheng;
+            item.nowPing = item.nowPing || item.initPing;
+            item.nowFu = item.nowFu ||item.initFu;
             item.shengRate = getRate(item.nowSheng);
             item.pingRate = getRate(item.nowPing);
             item.fuRate = getRate(item.nowFu);
-            europeShengRateTotal += item.shengRate;
-            europePingRateTotal += item.pingRate;
-            europeFuRateTotal += item.fuRate;
-
             item.returnRate = item.nowSheng * item.nowPing * item.nowFu / (item.nowSheng * item.nowPing + item.nowSheng * item.nowFu + item.nowPing * item.nowFu);
-
             item.color = COLOR_ARRAY[i % COLOR_ARRAY.length];
         }
-
         //计算出赔率的平均值
-        let europeShengRateAvg = europeShengRateTotal / europeOdds.length;
-        let europePingRateAvg = europePingRateTotal / europeOdds.length;
-        let europeFuRateAvg = europeFuRateTotal /europeOdds.length;
+        let europeShengRateAvg = Core.avgOfObjArray(europeOdds, 'shengRate');
+        let europePingRateAvg = Core.avgOfObjArray(europeOdds, 'pingRate');
+        let europeFuRateAvg =Core.avgOfObjArray(europeOdds, 'fuRate');
 
-        let rateArray = ['shengRate','pingRate','fuRate','returnRate'];
         //第二次遍历  赋值 凯利指数
-        for (let i = 0; i < europeOdds.length; i++) {
+        for (const item of europeOdds) {
             let item = europeOdds[i];
             item.kailiSheng = (item.nowSheng * europeShengRateAvg).toFixed(2);
             item.kailiPing = (item.nowPing * europePingRateAvg).toFixed(2);
             item.kailiFu = (item.nowFu * europeFuRateAvg).toFixed(2);
-            //小数 转 百分比 并 四舍五入
-            for (let j = 0; j < rateArray.length; j++) {
-                item[rateArray[j] + 'Str'] = (item[rateArray[j]] * 100).toFixed(1) + '%';
-            }
         }
     };
 
@@ -104,7 +87,7 @@
 
     let dataHandle= function(data){
         if(data.europeOdds) {
-            calculateEuropeKaili(data.europeOdds);
+            perfectedEurope(data.europeOdds);
         }
         if(data.asiaOdds) {
             perfectedAsia(data.asiaOdds);
@@ -125,4 +108,4 @@
             });
         }
     };
-}(window, window.jQuery, window.CaimaoDataApi));
+}(window, window.jQuery, window.CaimaoDataApi, window.Core));
