@@ -2,9 +2,527 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>彩猫体育</title>
+    <link href="../resources/css/base.css" rel="stylesheet">
+    <style>
+        .sort-header {
+            position: fixed;
+            top: 10vw;
+            left: 0;
+            z-index: 1;
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 10vw;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .sort-header ul {
+            display: table;
+            white-space: nowrap;
+        }
+
+        .sort-header li {
+            display: inline-block;
+        }
+
+        .sort-header span {
+            padding: 1vw 3vw;
+            font-weight: bold;
+            line-height: 10vw;
+            font-size: 3.8vw;
+            box-sizing: border-box;
+        }
+
+        .sort-header span.current {
+            color: #FB2852;
+            border-bottom: 2px solid #FB2852;
+        }
+
+        ul.article-ul {
+            padding: 20vw 0 20vw 0;
+        }
+
+        ul.article-ul li {
+            position: relative;
+            width: 100%;
+            padding: 2vw 2vw;
+            box-sizing: border-box;
+            height: 20vw;
+            border-bottom: 1px solid #eff0f5;
+        }
+
+        ul.article-ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul.article-ul li.hasThumb {
+            padding-right: 30vw;
+        }
+
+        ul.article-ul .article-li-title {
+            font-size: 5vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        ul.article-ul .article-li-intro {
+            text-indent: 2vw;
+            font-size: 3.5vw;
+            color: #cccccc;
+        }
+
+        ul.article-ul .article-li-thumbs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30vw;
+            height: 100%;
+        }
+
+        ul.article-ul .article-li-thumbs {
+            box-sizing: border-box;
+            padding: 2vw;
+            background-clip: content-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
-$END$
+<header class="caimao-header">
+    彩猫体育
+</header>
+<div id="sort-header" class="sort-header clearfix">
+
+
+    <ul class="clearfix"
+        style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px);">
+
+        <li>
+            <span data-sortid="2" class="current">推荐</span>
+        </li>
+
+        <li>
+            <span data-sortid="48">国际足坛</span>
+        </li>
+
+        <li>
+            <span data-sortid="29">专题</span>
+        </li>
+
+        <li>
+            <span data-sortid="16">女神</span>
+        </li>
+
+        <li>
+            <span data-sortid="14">NBA</span>
+        </li>
+
+        <li>
+            <span data-sortid="15">CBA</span>
+        </li>
+
+        <li>
+            <span data-sortid="8">英超</span>
+        </li>
+
+        <li>
+            <span data-sortid="21">电竞</span>
+        </li>
+
+        <li>
+            <span data-sortid="13">中国足球</span>
+        </li>
+
+        <li>
+            <span data-sortid="23">分析</span>
+        </li>
+
+        <li>
+            <span data-sortid="12">意甲</span>
+        </li>
+
+        <li>
+            <span data-sortid="10">西甲</span>
+        </li>
+
+        <li>
+            <span data-sortid="11">德甲</span>
+        </li>
+
+        <li>
+            <span data-sortid="9">法甲</span>
+        </li>
+
+        <li>
+            <span data-sortid="5">装备</span>
+        </li>
+
+    </ul>
+</div>
+
+<ul id="article-ul" class="article-ul">
+
+
+    <a href="articleDetail.html?id=78422">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                利拉德33分开拓者加时险胜独行侠
+            </div>
+            <div class="article-li-intro">
+                开拓者主场121-118加时战胜独行侠
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545631129934.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78345">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                马尔卡宁31+4公牛轻取骑士
+            </div>
+            <div class="article-li-intro">
+                公牛客场112-92大胜骑士
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545618954972.png');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78344">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                六人得分上双篮网轻取太阳
+            </div>
+            <div class="article-li-intro">
+                篮网主场以111-103击败太阳
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545618876122.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78340">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                欧文25分凯尔特人大胜黄蜂
+            </div>
+            <div class="article-li-intro">
+                凯尔特人以119-103大胜黄蜂
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545618784783.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78339">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                温斯洛22+6+5热火大胜魔术
+            </div>
+            <div class="article-li-intro">
+                热火客场115-91大胜魔术
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545618494792.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78338">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                希尔德28+6国王上演大逆转
+            </div>
+            <div class="article-li-intro">
+                国王以122-117拿下比赛
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545618413304.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78308">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                特纳18+17步行者轻取奇才
+            </div>
+            <div class="article-li-intro">
+                步行者以105-89战胜奇才
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545612448916.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=78305">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                卡特18+7老鹰胜活塞迎三连胜
+            </div>
+            <div class="article-li-intro">
+                老鹰98-95力克活塞拿下比赛
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/24/1545610550867.png');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77935">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                加里纳利32分快船险胜独行侠
+            </div>
+            <div class="article-li-intro">
+                快船以125-121险胜独行侠
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545373761612.png');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77934">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                保罗伤退哈登35+12火箭遭热火逆转
+            </div>
+            <div class="article-li-intro">
+                火箭客场99-101不敌热火
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545373644245.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77804">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                波蒂斯被诊断为右脚踝扭伤，将缺战2-4周
+            </div>
+            <div class="article-li-intro">
+                波蒂斯是在昨天与篮网比赛的第四节脚踝扭伤的
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545352407627.png');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77803">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                勇士仍准备匹配任何关于帕特里克-麦考的合同报价
+            </div>
+            <div class="article-li-intro">
+                多支球队有意提供合同报价
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545352343836.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77801">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                周琦与小里弗斯已度过澄清期，成为完全自由球员
+            </div>
+            <div class="article-li-intro">
+                此前二人被球队裁掉
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545352242973.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77800">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                富兰克林33+6，四川险胜八一
+            </div>
+            <div class="article-li-intro">
+                四川队主场98-92险胜八一队
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545351946579.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77799">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                汉密尔顿30+12，北京胜山东
+            </div>
+            <div class="article-li-intro">
+                北京以96-76战胜山东
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545351829330.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77798">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                布朗25+9，山西绝杀北控
+            </div>
+            <div class="article-li-intro">
+                山西111-110险胜北控
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545351654527.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77796">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                弗雷戴特47+9，上海险胜同曦
+            </div>
+            <div class="article-li-intro">
+                同曦队主场105-113遗憾负于上海队
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545351492488.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77794">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                斯隆狂轰36分，江苏胜福建
+            </div>
+            <div class="article-li-intro">
+                江苏客场112-86战胜福建
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/21/1545351068612.jpg');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77641">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                乔治43+12雷霆击败国王
+            </div>
+            <div class="article-li-intro">
+                雷霆以132-113击败国王
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/20/1545287680535.png');">
+            </div>
+
+        </li>
+    </a>
+
+    <a href="articleDetail.html?id=77639">
+        <li class="hasThumb">
+            <div class="article-li-title">
+                利拉德24+5+4开拓者力克灰熊
+            </div>
+            <div class="article-li-intro">
+                开拓者主场99-92力克灰熊
+            </div>
+
+            <div class="article-li-thumbs"
+                 style="background-image: url('http://img1.fcaimao.com/news/thumb/2018/12/20/1545287603648.png');">
+            </div>
+
+        </li>
+    </a>
+
+</ul>
+
+<footer class="caimao-footer">
+    <div class="article-list current">推荐</div>
+    <a href="matchList.html">
+        <div class="match-list">赛事</div>
+    </a>
+</footer>
+
+<script src="../resources/lib/jquery3.3.1.js"></script>
+<!-- 模板插件 -->
+<script src="../resources/lib/template-web.js"></script>
+<!-- 滚动条插件 -->
+<script src="../resources/lib/bscroll.min.js"></script>
+<script type="application/javascript">
+    $(function () {
+        //资讯栏目列表的 横向滚动条
+        var sortScroll = new BScroll('#sort-header', {
+            scrollX: true,
+            scrollY: false,
+            click: true
+        });
+        //监控滚动条  上拉加载更多
+        window.onscroll = function () {
+            var a = document.documentElement.scrollTop || document.body.scrollTop;//滚动条y轴上的距离
+            var b = document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+            var c = document.documentElement.scrollHeight || document.body.scrollHeight;//可视化的高度与溢出的距离（总高度）
+            if (c - a - b < b / 4) {
+                console.log("give me more money")
+            }
+        };
+    });
+
+</script>
+
 </body>
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas示例</title>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .europeChartBox {
+            width: 80vw;
+            height: 30vw;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <h1>欧赔图表</h1>
+    <div id="europeChartBox" class="europeChartBox">
+        <canvas id="europeChart"></canvas>
+    </div>
+</article>
+
+<script src="../../resources/lib/jquery3.3.1.js" type="text/javascript"></script>
+<script src="../../resources/js/dataApi.js" type="text/javascript"></script>
+
+<!--
+AntV F2 是蚂蚁金服全新一代数据可视化解决方案
+http://antv.alipay.com/zh-cn/f2/3.x/demo/index.html
+-->
+<script src="../../resources/lib/f2.min.js"></script>
+
+<script type="text/javascript">
+    let COLOR_ARRAY = ['#AC2924','#21ADE7','#FC8E12','#EF2566','#1B94C5','#2F4498','#1F1B83','#E9C11E','#208149','#CCC012','#134089','#FC7113','#814B0C','#359A7D','#524A8F','#6481CF','#606060','#DB5B1B', '#386EAE','#D8443B','#E15CDD','#E96C6A','#E9C223','#00012E','#117030','#FB1900','#CCC114'];
+
+    $(function () {
+        let mid = 1115527;
+
+        CaimaoDataApi.getMatchOdds(mid, function (data) {
+            console.log('赔率数据', data);
+
+            //获取欧赔公司列表
+            let europeCompanyMap = {};
+            for(let i = 0 ; i < data.europeOdds.length; i++){
+                data.europeOdds[i].color = COLOR_ARRAY[i % COLOR_ARRAY.length];
+                europeCompanyMap[data.europeOdds[i].compId] = data.europeOdds[i];
+            }
+            console.log('欧赔公司列表', europeCompanyMap);
+
+            // srMax
+            // srDiffer
+            // srMin
+            let chartData = [];
+
+            let keys = ['srMax', 'srMin', 'srDiffer'];
+            let compIds = [];
+
+            for (const k of keys) {
+                let compId = data.europeOddStatistics[k];
+                if (compIds.indexOf(compId) == -1) {
+                    compIds.push(compId);
+                }
+            }
+
+
+
+            console.log(compIds);
+            let finishCount = 0;
+            for (const compId of compIds) {
+                CaimaoDataApi.getMatchEuropeOddLogWithCompId(mid, compId, function (data) {
+                    console.log('赔率明细', data);
+
+                    for (let i = data.data.length - 1; i >= 0; i--) {
+                        chartData.push(data.data[i]);
+                    }
+                    finishCount++;
+                    if (finishCount == compIds.length) {
+                        draw();
+                    }
+                });
+            }
+
+
+            var draw = function () {
+                let minRate, maxRate;
+                let minx, maxx;
+                for (const item of chartData) {
+                    item.shengRate = (100 / item.sheng).toFixed(1);
+                    if (!minRate || item.shengRate < minRate) {
+                        minRate = item.shengRate;
+                    }
+                    if (!maxRate || item.shengRate > maxRate) {
+                        maxRate = item.shengRate;
+                    }
+                    if (!minx || item.oddsTimeLong < minx) {
+                        minx = item.oddsTimeLong;
+                    }
+                    if (!maxx || item.oddsTimeLong > maxx) {
+                        maxx = item.oddsTimeLong;
+                    }
+                    item.compId = ''+item.compId;
+                }
+
+                // chartData = chartData.sort(function(a , b){
+                //     return a.oddsTimeLong - b.oddsTimeLong;
+                // });
+
+                console.log('chartData', chartData);
+                var chart = new F2.Chart({
+                    id: 'europeChart',
+                    pixelRatio: window.devicePixelRatio
+                });
+
+                chart.source(chartData, {
+                    shengRate: {
+                        type: 'linear',
+                        tickCount: 5,
+                    },
+                    oddsTimeLong: {
+                        type: 'linear',
+                        range: [0, 1],
+                        max: maxx,
+                        min: minx
+                    }
+                });
+                chart.tooltip(false);
+                chart.axis('oddsTimeLong', {
+                    label: function label(text, index, total) {
+                        var textCfg = {};
+                        if (index === 0) {
+                            textCfg.textAlign = 'left';
+                            textCfg.text = '(初)';
+                        } else if (index > 0 && index === total - 1) {
+                            textCfg.textAlign = 'right';
+                            textCfg.text = '(即)';
+                        } else {
+                            textCfg = null;
+                        }
+                        return textCfg;
+                    }
+                });
+                chart.axis('shengRate', {
+                    label: function label(text, index, total) {
+                        return {text: text + '%'};
+                    }
+                });
+                chart.legend('compId', {
+                    align: 'center',
+                    itemFormatter: function(val){
+                        return europeCompanyMap[val] && europeCompanyMap[val].compName;
+                    }
+                });
+
+                chart.line().position('oddsTimeLong*shengRate').color('compId', function(val) {
+                    return europeCompanyMap[val] && europeCompanyMap[val].color;
+                });
+                //这里不要点了
+                // chart.point().position('oddsTimeLong*shengRate').style({
+                //     //stroke: '#fff',
+                //     lineWidth: 1
+                // }).color('compName');
+                chart.render();
+            }
+
+        })
+
+    });
+</script>
+</body>
+</html>
